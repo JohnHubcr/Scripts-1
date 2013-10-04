@@ -1,0 +1,34 @@
+;************working stunnel.conf file*******************
+chroot = /usr/local/var/lib/stunnel/
+setuid = nobody
+setgid = nogroup
+
+pid = /stunnel.pid
+
+output = /usr/local/etc/stunnel/stunnel.log
+
+cert = /usr/local/etc/stunnel/mail.pem
+;key = /usr/local/etc/stunnel/mail.pem
+
+options = NO_SSLv2
+
+[nc]
+client = yes
+accept = 127.0.0.1:110
+connect = 192.168.11.237:995
+
+;[gmail-imap]
+;client = yes
+;accept = 127.0.0.1:143
+;connect = imap.gmail.com:993
+
+;[gmail-smtp]
+;client = yes
+;accept = 127.0.0.1:25
+;connect = smtp.gmail.com:465
+
+; Example SSL front-end to a web server
+
+;[https]
+;accept  = 443
+;connect = 80
